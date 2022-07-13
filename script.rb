@@ -2,15 +2,14 @@
 # if out of order swap the elements
 require 'pry-byebug'
 
-def bubble_sort(array)
-  i = 0
-  b = 1
-  
 
-  array.each do
+def bubble_sort(array)
+    i = 0
+    b = 1
+
   until b >= array.length do
     if array[i] > array[b]
-     array[i], array[b] = array[b], array[i]
+       array[i], array[b] = array[b], array[i]
     else
       array[i], array[b] = array[i], array[b]
     end
@@ -18,8 +17,7 @@ def bubble_sort(array)
     b += 1
   end
 end
-  p array
-end
 
+array = [4,3,78,2,0,2]
 
-bubble_sort([4,3,78,2,0,2])
+array.length.times.collect { p bubble_sort([array]) }
