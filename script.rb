@@ -4,19 +4,21 @@ require 'pry-byebug'
 
 def bubble_sort(array)
   i = 0
-  new_array = []
+  b = 1
+  
 
   array.each do
-  until i >= array.length do
-    if array[i] > array[i + 1]
-      new_array[i] = array[i + 1]
+  until b >= array.length do
+    if array[i] > array[b]
+     array[i], array[b] = array[b], array[i]
     else
-      new_array[i] = array[i]
+      array[i], array[b] = array[i], array[b]
     end
     i += 1
+    b += 1
   end
 end
-  p new_array
+  p array
 end
 
 
