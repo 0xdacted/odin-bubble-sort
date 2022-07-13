@@ -3,26 +3,21 @@
 require 'pry-byebug'
 
 def bubble_sort(array)
-  
-array.each_with_index do |element, index|
-  original_index = index
-  
-  until index >= array.length do
-    
-    if array[original_index].to_i > array[index].to_i do
-      swap(array[original_index].to_i, array[index].to_i)
-    
-      index += 1
-end
-end
-end
-p array
-end
+  i = 0
+  new_array = []
 
-def swap!(a,b)
-  self[a], self[b] = self[b], self[a]
-self
+  array.each do
+  until i >= array.length do
+    if array[i] > array[i + 1]
+      new_array[i] = array[i + 1]
+    else
+      new_array[i] = array[i]
+    end
+    i += 1
+  end
+end
+  p new_array
 end
 
 
-array = bubble_sort([4,3,78,2,0,2])
+bubble_sort([4,3,78,2,0,2])
