@@ -1,23 +1,17 @@
 # for each element in the list, look at the element and the element directly to its right
 # if out of order swap the elements
-require 'pry-byebug'
-
-
 def bubble_sort(array)
-    i = 0
-    b = 1
-
-  until b >= array.length do
-    if array[i] > array[b]
-       array[i], array[b] = array[b], array[i]
-    else
-      array[i], array[b] = array[i], array[b]
+    
+  for i in 0...array.length
+  
+    for b in 0...(array.length - i - 1) 
+     if array[b] > array[b + 1]
+       array[b], array[b + 1] = array[b + 1], array[b]
+     end
     end
-    i += 1
-    b += 1
   end
+p array
 end
 
-array = [4,3,78,2,0,2]
-
-array.length.times.collect { p bubble_sort([array]) }
+data = [4,3,78,2,0,2]
+bubble_sort(data)
